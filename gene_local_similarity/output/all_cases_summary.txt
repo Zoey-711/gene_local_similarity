@@ -1,0 +1,21 @@
+﻿Case 1 完全匹配
+- score: 16
+- identity: 100.00%
+- variations: 无
+
+Case 2 SNP
+- score: 13
+- identity: 87.50%
+- variations: SNP at seq1_pos=5, A->T
+
+Case 3 DEL
+- score: 14
+- identity: 88.89%
+- gap_ratio: 11.11%
+- variations: DEL at seq1_pos=4, T->-
+
+Case 4 局部高相似
+- score: 15
+- local range: seq1[6,14], seq2[6,14]
+- identity: 88.89%
+- variations: SNP at seq1_pos=11, A->C
