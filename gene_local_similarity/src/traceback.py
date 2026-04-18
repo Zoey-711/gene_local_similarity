@@ -17,11 +17,13 @@ def traceback_local(
     aligned1: list[str] = []
     aligned2: list[str] = []
 
+    # 记录回溯起点，对应局部最优片段的结束位置
     end_i = i
     end_j = j
 
     while i > 0 and j > 0:
         direction = trace_matrix[i][j]
+        # 到达 STOP 或得分为0，说明局部比对片段起点已找到
         if direction == STOP or score_matrix[i][j] == 0:
             break
 
@@ -42,6 +44,7 @@ def traceback_local(
     aligned_seq1 = "".join(reversed(aligned1))
     aligned_seq2 = "".join(reversed(aligned2))
 
+    # 回溯停止时 i/j 停在片段起点前一个位置，因此 +1
     start_i = i + 1
     start_j = j + 1
 

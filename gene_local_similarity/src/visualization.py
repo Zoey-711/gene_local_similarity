@@ -8,6 +8,7 @@ def plot_score_matrix(score_matrix: list[list[int]], save_path: str) -> bool:
     try:
         import matplotlib.pyplot as plt
     except Exception:
+        # 部分环境未安装 matplotlib，返回 False 让主流程继续
         return False
 
     Path(save_path).parent.mkdir(parents=True, exist_ok=True)

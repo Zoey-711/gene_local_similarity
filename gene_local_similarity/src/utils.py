@@ -33,10 +33,13 @@ def build_match_line(aligned_seq1: str, aligned_seq2: str) -> str:
     """构造比对中间标记行：匹配用 |，错配用 .，gap 用空格。"""
     chars: List[str] = []
     for a, b in zip(aligned_seq1, aligned_seq2):
+        # 完全匹配
         if a == b and a != "-":
             chars.append("|")
+        # 任一位置是 gap
         elif a == "-" or b == "-":
             chars.append(" ")
+        # 非 gap 的错配
         else:
             chars.append(".")
     return "".join(chars)

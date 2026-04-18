@@ -22,6 +22,7 @@ def calculate_similarity(result: AlignmentResult) -> dict:
     mismatches = 0
     gaps = 0
 
+    # 逐位统计：gap、匹配、错配
     for x, y in zip(a1, a2):
         if x == "-" or y == "-":
             gaps += 1
